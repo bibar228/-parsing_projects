@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import telebot
+import time
 
 telega_token = "5926919919:AAFCHFocMt_pdnlAgDo-13wLe4h_tHO0-GE"
 url = "https://funpay.com/"
@@ -25,3 +26,5 @@ with open("funpay-games.txt", "r+", encoding="UTF-8") as file:
             message = "Вышла новая игра - " + i
             bot.send_message(chat_id, message)
             file.write(i + "\n")
+            time.sleep(2)
+
